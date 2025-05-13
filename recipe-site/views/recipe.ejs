@@ -1,0 +1,22 @@
+<%- include("partials/header") %>
+
+<div class="container">
+  <h2><%= recipe.name %></h2>
+  <p><strong>Protein Type:</strong> <%= recipe.protein_type %></p>
+  <p><strong>Instructions:</strong></p>
+  <p><%= recipe.instructions %></p>
+
+  <h3>Ingredients:</h3>
+  <ul>
+    <% ingredients.forEach(i => { %>
+      <li class="ingredient" data-info="<%= i.info %>"><%= i.name %></li>
+    <% }) %>
+  </ul>
+</div>
+
+<!-- Popup box and script go AFTER the container, before the footer -->
+<div id="popup"></div>
+<script src="/js/script.js"></script>
+
+<%- include("partials/footer") %>
+
